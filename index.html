@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanziba Basnin - AI Researcher & Educator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#f7f5f3',
+                        'ink': '#2c3e50',
+                        'blue-ink': '#1e3a8a',
+                        'red-ink': '#dc2626',
+                        'margin': '#e5e7eb',
+                        'notebook': '#fef7ed',
+                    },
+                    fontFamily: {
+                        'handwritten': ['Kalam', 'cursive'],
+                        'notebook': ['Caveat', 'cursive'],
+                        'typewriter': ['Courier New', 'monospace'],
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        .notebook-lines {
+            background-image:
+                linear-gradient(to right, #e5e7eb 80px, transparent 80px),
+                repeating-linear-gradient(transparent,
+                    transparent 24px,
+                    #e5e7eb 24px,
+                    #e5e7eb 26px);
+        }
+
+        .spiral-holes {
+            background-image: radial-gradient(circle at 40px 25px, #d1d5db 3px, transparent 3px),
+                radial-gradient(circle at 40px 75px, #d1d5db 3px, transparent 3px),
+                radial-gradient(circle at 40px 125px, #d1d5db 3px, transparent 3px);
+            background-repeat: repeat-y;
+            background-size: 80px 100px;
+        }
+
+        .handwritten-underline {
+            position: relative;
+        }
+
+        .handwritten-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: url("data:image/svg+xml,%3csvg width='100' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m0,10 q25,5 50,0 t50,0' stroke='%23dc2626' stroke-width='2' fill='none'/%3e%3c/svg%3e") repeat-x;
+            background-size: 100px 20px;
+        }
+
+        .paper-texture {
+            background-color: #f7f5f3;
+            background-image:
+                radial-gradient(circle at 25% 25%, #f0f0f0 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #f0f0f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .torn-edge {
+            position: relative;
+        }
+
+        .torn-edge::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3e%3cpath d='M0,5 Q10,0 20,5 T40,5 T60,5 T80,5 T100,5 L100,10 L0,10 Z' fill='%23f7f5f3'/%3e%3c/svg%3e") repeat-x;
+        }
+
+        .sticky-note {
+            background: linear-gradient(45deg, #fef3c7 0%, #fde68a 100%);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+        }
+
+        .sticky-note:nth-child(even) {
+            transform: rotate(1deg);
+        }
+    </style>
+</head>
+
+<body class="bg-notebook paper-texture min-h-screen">
+    <div class="notebook-lines spiral-holes min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+            <!-- Header/Navigation -->
+            <header-component></header-component>
+
+            <!-- Hero Section -->
+            <section class="py-12 md:py-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="ml-20 md:ml-24">
+                                <h1
+                                    class="font-handwritten text-4xl md:text-6xl text-ink mb-4 animate__animated animate__fadeInUp">
+                                    <span class="handwritten-underline text-red-ink">Nanziba Basnin</span>
+                                </h1>
+                                <h2
+                                    class="font-notebook text-2xl md:text-3xl text-blue-ink mb-6 animate__animated animate__fadeInUp animate__delay-1s">
+                                    AI Researcher & Educator
+                                </h2>
+                                <div
+                                    class="font-handwritten text-lg text-ink mb-8 leading-relaxed animate__animated animate__fadeInUp animate__delay-2s">
+                                    <p class="mb-4">Passionate about advancing AI-driven healthcare diagnostics and
+                                        sustainable computing through rigorous research and innovative teaching.</p>
+                                    <div class="flex flex-wrap gap-4 mt-6">
+                                        <div class="sticky-note p-3 font-notebook text-sm">
+                                            <i class="fas fa-graduation-cap text-blue-ink"></i> Erasmus Mundus Scholar
+                                        </div>
+                                        <div class="sticky-note p-3 font-notebook text-sm">
+                                            <i class="fas fa-microscope text-red-ink"></i> 364 Citations
+                                        </div>
+                                        <div class="sticky-note p-3 font-notebook text-sm">
+                                            <i class="fas fa-brain text-green-600"></i> AI Healthcare Expert
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2 flex justify-center animate__animated animate__fadeInRight">
+                            <div class="relative">
+                                <img src="https://supabasekong-shipstation.badalhibadal.com//storage/v1/object/public/shipstation-websites/ai-headshots/other/female/other-female-16.jpeg"
+                                    alt="Nanziba Basnin - AI Researcher"
+                                    class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-8 border-white shadow-2xl">
+                                <div
+                                    class="absolute -bottom-4 -right-4 bg-yellow-200 p-4 rounded-lg transform rotate-12 font-handwritten text-sm shadow-lg">
+                                    <i class="fas fa-quote-left text-blue-ink"></i>
+                                    <p class="text-ink">"Inspiring the next generation of AI innovators"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="py-16 torn-edge">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        About Me
+                    </h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="font-handwritten text-lg text-ink leading-relaxed space-y-6">
+                            <p>Passionate educator and researcher with a strong commitment to teaching and advancing the
+                                fields of Artificial Intelligence (AI), Machine Learning, and Computer Vision.</p>
+                            <p>My work focuses on AI-driven healthcare diagnostics and sustainable computing, blending
+                                rigorous research with practical applications.</p>
+                            <p>I strive to create an inclusive and engaging learning environment, inspiring the next
+                                generation of computer scientists to explore technology's frontiers.</p>
+
+                            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-ink mt-8">
+                                <h3 class="font-notebook text-xl text-blue-ink mb-4">Research Interests</h3>
+                                <ul class="space-y-2 font-handwritten text-ink">
+                                    <li><i class="fas fa-brain text-red-ink mr-2"></i> AI-driven Healthcare Diagnostics
+                                    </li>
+                                    <li><i class="fas fa-leaf text-green-600 mr-2"></i> Sustainable Computing</li>
+                                    <li><i class="fas fa-eye text-blue-ink mr-2"></i> Computer Vision</li>
+                                    <li><i class="fas fa-hand-paper text-purple-600 mr-2"></i> Gesture Recognition</li>
+                                    <li><i class="fas fa-network-wired text-orange-600 mr-2"></i> Federated Learning
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-yellow-100 p-6 rounded-lg transform -rotate-1 shadow-lg">
+                                <h3 class="font-notebook text-xl text-ink mb-4">Quick Stats</h3>
+                                <div class="grid grid-cols-2 gap-4 font-handwritten text-sm">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-blue-ink">364</div>
+                                        <div class="text-ink">Citations</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-red-ink">10</div>
+                                        <div class="text-ink">h-index</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-green-600">15+</div>
+                                        <div class="text-ink">Publications</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-purple-600">4.8/5</div>
+                                        <div class="text-ink">Teaching Rating</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-100 p-6 rounded-lg transform rotate-1 shadow-lg">
+                                <h3 class="font-notebook text-xl text-ink mb-4">Contact Info</h3>
+                                <div class="space-y-3 font-handwritten text-sm">
+                                    <div><i class="fas fa-envelope text-red-ink mr-2"></i> <a
+                                            href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                            data-cfemail="a9cbc8dac7c0c7c7c8c7d3c0cbc8e9cec4c8c0c587cac6c4">[email&#160;protected]</a>
+                                    </div>
+                                    <div><i class="fas fa-phone text-blue-ink mr-2"></i> +880 1329521648</div>
+                                    <div><i class="fas fa-map-marker-alt text-green-600 mr-2"></i> Chittagong,
+                                        Bangladesh</div>
+                                    <div><i class="fab fa-google text-orange-600 mr-2"></i> Google Scholar Profile</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="py-16">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Education
+                    </h2>
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-blue-ink">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="font-notebook text-xl text-blue-ink">Erasmus Mundus Joint Master's in Green
+                                    Networking & Cloud Computing</h3>
+                                <span
+                                    class="font-handwritten text-ink bg-yellow-200 px-3 py-1 rounded-full text-sm">Sept.
+                                    2022 – Aug. 2024</span>
+                            </div>
+                            <p class="font-handwritten text-ink mb-2">University of Lorraine, FR | Leeds Beckett
+                                University, UK | Lulea University of Technology, SW</p>
+                            <div class="bg-yellow-50 p-4 rounded-lg mt-4">
+                                <p class="font-handwritten text-sm text-ink"><i
+                                        class="fas fa-trophy text-yellow-600 mr-2"></i>Erasmus Mundus Scholarship (top
+                                    1.6% of applicants, 24 recipients out of 1500 candidates)</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-green-600">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="font-notebook text-xl text-green-600">Bachelor's in Computer Science &
+                                    Engineering</h3>
+                                <span class="font-handwritten text-ink bg-green-200 px-3 py-1 rounded-full text-sm">Feb.
+                                    2016 – Mar. 2021</span>
+                            </div>
+                            <p class="font-handwritten text-ink mb-2">International Islamic University Chittagong,
+                                Bangladesh</p>
+                            <div class="bg-green-50 p-4 rounded-lg mt-4 space-y-2">
+                                <p class="font-handwritten text-sm text-ink"><i
+                                        class="fas fa-medal text-yellow-600 mr-2"></i>First Class Honor's (3.54/4.0)</p>
+                                <p class="font-handwritten text-sm text-ink"><i
+                                        class="fas fa-award text-blue-600 mr-2"></i>Best Undergraduate Thesis Award (top
+                                    1% among 300 students)</p>
+                                <p class="font-handwritten text-sm text-ink"><i
+                                        class="fas fa-users text-purple-600 mr-2"></i>IEEE Student Branch (Vice
+                                    Chairperson) | Computer Club (General Secretary)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Projects Section -->
+            <section class="py-16 torn-edge">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Featured Research Projects
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://www.medicaldevice-network.com/wp-content/uploads/sites/23/2023/06/shutterstock_1607676169.jpg"
+                                alt="Parkinson's Disease Detection using AI" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">Parkinson's Disease Detection</h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">Advanced CNN-LSTM model for accurate
+                                    Parkinson's Disease detection from MRI samples using NTU dataset. Achieved 93.75%
+                                    accuracy.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-handwritten">Deep
+                                        Learning</span>
+                                    <span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-handwritten">Medical
+                                        AI</span>
+                                    <span
+                                        class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-handwritten">CNN-LSTM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://ferrumhealth.com/wp-content/uploads/2023/06/shutterstock_2286457975-1024x591.jpg"
+                                alt="Alzheimer's Disease Diagnosis using Federated Learning"
+                                class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">Federated Learning for Alzheimer's
+                                </h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">Evolutionary Federated Learning
+                                    approach for Alzheimer's Disease diagnosis under uncertainty, enhancing data
+                                    privacy.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-handwritten">Federated
+                                        Learning</span>
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-handwritten">Privacy</span>
+                                    <span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-handwritten">Healthcare</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://www.onixnet.com/wp-content/uploads/2023/03/How-AI-Powered-Medical-Imaging-is-Transforming-Healthcare-1024x316.jpg"
+                                alt="Bengali Sign Language Recognition" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">Bengali Sign Language Recognition
+                                </h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">Integrated CNN-LSTM model for Bangla
+                                    lexical sign language recognition with 88.5% accuracy for Bengali signs.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-handwritten">Computer
+                                        Vision</span>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-handwritten">NLP</span>
+                                    <span
+                                        class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-handwritten">Accessibility</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://ai-cases.com/wp-content/uploads/2022/01/Medical-Imaging_small.jpg"
+                                alt="Hand Gesture Recognition System" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">Hand Gesture Recognition</h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">HCI Integrated system achieving 99.0%
+                                    accuracy for hand gestures using curated dataset of 30,000 images.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-handwritten">HCI</span>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-handwritten">Computer
+                                        Vision</span>
+                                    <span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-handwritten">Real-time</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://www.physicamedica.com/cms/attachment/a2aacbcf-2fa4-4df5-a884-03962c09d2b0/gr1_lrg.jpg"
+                                alt="Sustainable Fish Farming using AI" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">Regenerative Fish Farming</h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">Innovative solution combining stats
+                                    (30%), ML (40%), and DL (30%) for sustainable aquaculture and climate mitigation.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-handwritten">Sustainability</span>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-handwritten">Machine
+                                        Learning</span>
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-handwritten">Climate</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                            <div
+                                class="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                                <i class="fas fa-microscope text-white text-6xl"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-notebook text-lg text-blue-ink mb-3">COVID-19 Monitoring</h3>
+                                <p class="font-handwritten text-sm text-ink mb-4">IoMT-based Android application for
+                                    monitoring COVID-19 patients using real-time data and AI analytics.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-handwritten">IoMT</span>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-handwritten">Mobile
+                                        App</span>
+                                    <span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-handwritten">Healthcare</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="py-16">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Technical Skills
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div class="bg-blue-50 p-6 rounded-lg border-2 border-dashed border-blue-300">
+                            <h3 class="font-notebook text-xl text-blue-ink mb-4">
+                                <i class="fas fa-brain mr-2"></i>AI & Machine Learning
+                            </h3>
+                            <div class="space-y-3 font-handwritten text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span>TensorFlow</span>
+                                    <div class="w-20 h-2 bg-blue-200 rounded-full">
+                                        <div class="w-18 h-2 bg-blue-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Keras</span>
+                                    <div class="w-20 h-2 bg-blue-200 rounded-full">
+                                        <div class="w-16 h-2 bg-blue-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>OpenCV</span>
+                                    <div class="w-20 h-2 bg-blue-200 rounded-full">
+                                        <div class="w-18 h-2 bg-blue-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>scikit-learn</span>
+                                    <div class="w-20 h-2 bg-blue-200 rounded-full">
+                                        <div class="w-16 h-2 bg-blue-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 p-6 rounded-lg border-2 border-dashed border-green-300">
+                            <h3 class="font-notebook text-xl text-green-600 mb-4">
+                                <i class="fas fa-code mr-2"></i>Programming Languages
+                            </h3>
+                            <div class="space-y-3 font-handwritten text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span>Python</span>
+                                    <div class="w-20 h-2 bg-green-200 rounded-full">
+                                        <div class="w-20 h-2 bg-green-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Java</span>
+                                    <div class="w-20 h-2 bg-green-200 rounded-full">
+                                        <div class="w-16 h-2 bg-green-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>C++</span>
+                                    <div class="w-20 h-2 bg-green-200 rounded-full">
+                                        <div class="w-18 h-2 bg-green-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>R</span>
+                                    <div class="w-20 h-2 bg-green-200 rounded-full">
+                                        <div class="w-14 h-2 bg-green-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-6 rounded-lg border-2 border-dashed border-purple-300">
+                            <h3 class="font-notebook text-xl text-purple-600 mb-4">
+                                <i class="fas fa-cloud mr-2"></i>Cloud Computing
+                            </h3>
+                            <div class="space-y-3 font-handwritten text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span>AWS</span>
+                                    <div class="w-20 h-2 bg-purple-200 rounded-full">
+                                        <div class="w-16 h-2 bg-purple-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Azure</span>
+                                    <div class="w-20 h-2 bg-purple-200 rounded-full">
+                                        <div class="w-14 h-2 bg-purple-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Docker</span>
+                                    <div class="w-20 h-2 bg-purple-200 rounded-full">
+                                        <div class="w-16 h-2 bg-purple-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Kubernetes</span>
+                                    <div class="w-20 h-2 bg-purple-200 rounded-full">
+                                        <div class="w-12 h-2 bg-purple-600 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="mt-12">
+                        <h3 class="font-notebook text-2xl text-ink mb-6">Soft Skills</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-yellow-100 p-4 rounded-lg transform -rotate-1 shadow-md">
+                                <div class="text-center">
+                                    <i class="fas fa-lightbulb text-yellow-600 text-3xl mb-2"></i>
+                                    <h4 class="font-notebook text-lg text-ink">Analytical Thinking</h4>
+                                    <p class="font-handwritten text-sm text-ink mt-2">Interpreting complex data and
+                                        drawing meaningful conclusions</p>
+                                </div>
+                            </div>
+                            <div class="bg-pink-100 p-4 rounded-lg transform rotate-1 shadow-md">
+                                <div class="text-center">
+                                    <i class="fas fa-sync-alt text-pink-600 text-3xl mb-2"></i>
+                                    <h4 class="font-notebook text-lg text-ink">Adaptability</h4>
+                                    <p class="font-handwritten text-sm text-ink mt-2">Flexibility with evolving research
+                                        needs and technology</p>
+                                </div>
+                            </div>
+                            <div class="bg-green-100 p-4 rounded-lg transform -rotate-1 shadow-md">
+                                <div class="text-center">
+                                    <i class="fas fa-rocket text-green-600 text-3xl mb-2"></i>
+                                    <h4 class="font-notebook text-lg text-ink">Innovation</h4>
+                                    <p class="font-handwritten text-sm text-ink mt-2">Creativity in conceptualizing
+                                        cutting-edge approaches</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section class="py-16 torn-edge">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Recent Publications
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-ink">
+                            <h3 class="font-notebook text-lg text-blue-ink mb-2">An Evolutionary Federated Learning
+                                Approach to Diagnose Alzheimer's Disease Under Uncertainty</h3>
+                            <p class="font-handwritten text-sm text-ink mb-2">Diagnostics, 15(1), 80 (2025)</p>
+                            <p class="font-handwritten text-xs text-gray-600">Basnin, N., Mahmud, T., Islam, R. U., &
+                                Andersson, K.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-600">
+                            <h3 class="font-notebook text-lg text-green-600 mb-2">Deep learning approach to classify
+                                Parkinson's disease from MRI samples</h3>
+                            <p class="font-handwritten text-sm text-ink mb-2">International Conference on Brain
+                                Informatics (2021)</p>
+                            <p class="font-handwritten text-xs text-gray-600">Basnin, N., Nahar, N., Anika, F. A.,
+                                Hossain, M. S., & Andersson, K.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-purple-600">
+                            <h3 class="font-notebook text-lg text-purple-600 mb-2">An integrated CNN-LSTM model for
+                                Bangla lexical sign language recognition</h3>
+                            <p class="font-handwritten text-sm text-ink mb-2">Proceedings of TCCE 2020, Springer
+                                Singapore (2021)</p>
+                            <p class="font-handwritten text-xs text-gray-600">Basnin, N., Nahar, L., & Hossain, M. S.
+                            </p>
+                        </div>
+
+                        <div class="text-center mt-8">
+                            <div class="bg-yellow-200 inline-block p-4 rounded-lg transform rotate-2 shadow-lg">
+                                <p class="font-notebook text-lg text-ink">
+                                    <i class="fas fa-graduation-cap text-blue-ink mr-2"></i>
+                                    Google Scholar: 364 Citations | h-index: 10
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards & Achievements -->
+            <section class="py-16">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Awards & Achievements
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div
+                                class="bg-gradient-to-r from-yellow-400 to-orange-500 p-6 rounded-lg shadow-lg text-white">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-trophy text-3xl mr-4"></i>
+                                    <div>
+                                        <h3 class="font-notebook text-xl">Erasmus Mundus Scholarship</h3>
+                                        <p class="font-handwritten text-sm opacity-90">European Union Programme (2022)
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="font-handwritten text-sm">Top 1.6% of applicants (24 out of 1500 candidates) -
+                                    €49,000 fully-funded scholarship</p>
+                            </div>
+
+                            <div
+                                class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 rounded-lg shadow-lg text-white">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-award text-3xl mr-4"></i>
+                                    <div>
+                                        <h3 class="font-notebook text-xl">Best Paper Award</h3>
+                                        <p class="font-handwritten text-sm opacity-90">International Conference on
+                                            Applied Intelligence (2021)</p>
+                                    </div>
+                                </div>
+                                <p class="font-handwritten text-sm">Belief Rule-Based Expert System for Chikungunya
+                                    research</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div
+                                class="bg-gradient-to-r from-green-500 to-teal-600 p-6 rounded-lg shadow-lg text-white">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-medal text-3xl mr-4"></i>
+                                    <div>
+                                        <h3 class="font-notebook text-xl">Best Undergraduate Thesis</h3>
+                                        <p class="font-handwritten text-sm opacity-90">IIUC (2021)</p>
+                                    </div>
+                                </div>
+                                <p class="font-handwritten text-sm">Top 1% among 300 students - HCI Integrated Hand
+                                    Gesture Recognition System</p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-red-500 to-pink-600 p-6 rounded-lg shadow-lg text-white">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-star text-3xl mr-4"></i>
+                                    <div>
+                                        <h3 class="font-notebook text-xl">Teaching Excellence</h3>
+                                        <p class="font-handwritten text-sm opacity-90">Student Evaluation (2022)</p>
+                                    </div>
+                                </div>
+                                <p class="font-handwritten text-sm">4.8/5 rating with 96% student satisfaction rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Download Section -->
+            <section class="py-16 torn-edge">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24 text-center">
+                    <h2 class="font-handwritten text-3xl md:text-4xl text-red-ink mb-8 handwritten-underline">
+                        Download Resume
+                    </h2>
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg inline-block transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-file-pdf text-6xl text-red-600 mb-4"></i>
+                        <h3 class="font-notebook text-xl text-ink mb-4">Complete Academic CV</h3>
+                        <p class="font-handwritten text-sm text-gray-600 mb-6">Download my detailed resume with full
+                            research experience, publications, and achievements</p>
+                        <a href="https://supabasekong-shipstation.badalhibadal.com/storage/v1/object/public/shipstation-websites/temporary-assets/1750528688862-resume_nanzibabasnin.pdf"
+                            target="_blank"
+                            class="bg-red-600 hover:bg-red-700 text-white font-notebook text-lg px-8 py-3 rounded-lg shadow-lg transition-colors duration-300 inline-flex items-center">
+                            <i class="fas fa-download mr-2"></i>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="py-12 border-t-2 border-dashed border-gray-300">
+                <div class="max-w-6xl mx-auto ml-20 md:ml-24">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="font-notebook text-xl text-ink mb-4">Connect With Me</h3>
+                            <div class="space-y-3 font-handwritten text-sm">
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-red-ink mr-3"></i>
+                                    <a href="/cdn-cgi/l/email-protection#bedcdfcdd0d7d0d0dfd0c4d7dcdffed9d3dfd7d290ddd1d3"
+                                        class="text-ink hover:text-blue-ink"><span class="__cf_email__"
+                                            data-cfemail="36545745585f585857584c5f545776515b575f5a1855595b">[email&#160;protected]</span></a>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fab fa-linkedin text-blue-600 mr-3"></i>
+                                    <a href="#" class="text-ink hover:text-blue-ink">LinkedIn Profile</a>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fab fa-google text-orange-600 mr-3"></i>
+                                    <a href="#" class="text-ink hover:text-blue-ink">Google Scholar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-notebook text-xl text-ink mb-4">Research Areas</h3>
+                            <ul class="space-y-2 font-handwritten text-sm text-ink">
+                                <li><i class="fas fa-brain text-blue-ink mr-2"></i>AI Healthcare Diagnostics</li>
+                                <li><i class="fas fa-leaf text-green-600 mr-2"></i>Sustainable Computing</li>
+                                <li><i class="fas fa-eye text-purple-600 mr-2"></i>Computer Vision</li>
+                                <li><i class="fas fa-network-wired text-orange-600 mr-2"></i>Federated Learning</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-notebook text-xl text-ink mb-4">Quick Stats</h3>
+                            <div class="grid grid-cols-2 gap-4 font-handwritten text-sm">
+                                <div class="text-center bg-blue-50 p-3 rounded-lg">
+                                    <div class="text-xl font-bold text-blue-ink">364</div>
+                                    <div class="text-ink">Citations</div>
+                                </div>
+                                <div class="text-center bg-green-50 p-3 rounded-lg">
+                                    <div class="text-xl font-bold text-green-600">15+</div>
+                                    <div class="text-ink">Publications</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8 pt-8 border-t border-dashed border-gray-300">
+                        <p class="font-handwritten text-ink">
+                            © 2025 Nanziba Basnin. Inspiring the next generation of AI innovators.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript for Web Components -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        class Header extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+                    <nav class="bg-white shadow-lg rounded-lg mb-8 ml-20 md:ml-24">
+                        <div class="px-6 py-4">
+                            <div class="flex justify-between items-center">
+                                <div class="font-notebook text-2xl text-ink">
+                                    <span class="text-red-ink">Nanziba</span> Basnin
+                                </div>
+                                
+                                <!-- Desktop Menu -->
+                                <div class="hidden md:flex space-x-8">
+                                    <a href="#about" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">About</a>
+                                    <a href="#education" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Education</a>
+                                    <a href="#research" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Research</a>
+                                    <a href="#skills" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Skills</a>
+                                    <a href="#publications" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Publications</a>
+                                    <a href="#awards" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Awards</a>
+                                </div>
+                                
+                                <!-- Mobile Menu Button -->
+                                <button id="mobile-menu-button" class="md:hidden text-ink hover:text-blue-ink">
+                                    <i class="fas fa-bars text-xl"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Mobile Menu -->
+                            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-dashed border-gray-300">
+                                <div class="flex flex-col space-y-3">
+                                    <a href="#about" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">About</a>
+                                    <a href="#education" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Education</a>
+                                    <a href="#research" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Research</a>
+                                    <a href="#skills" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Skills</a>
+                                    <a href="#publications" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Publications</a>
+                                    <a href="#awards" class="font-handwritten text-ink hover:text-blue-ink transition-colors duration-300">Awards</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+                this.initializeMenu();
+            }
+
+            initializeMenu() {
+                const mobileMenuButton = this.querySelector('#mobile-menu-button');
+                const mobileMenu = this.querySelector('#mobile-menu');
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            }
+        }
+
+        customElements.define('header-component', Header);
+
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
